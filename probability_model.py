@@ -222,6 +222,7 @@ class ProbabilityModel:
             self.one_step_ahead_predictive_log_loss = (
                     step_ahead_exp - integral_exp[1:])
             self.r0_log_loss = r0_log_prob_exp - integral_exp[0]
+
             
 #            print("original growth", self.one_step_ahead_predictive_log_loss_2)
 #            print("new growth", self.one_step_ahead_predictive_log_loss)

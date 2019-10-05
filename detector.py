@@ -16,8 +16,8 @@ import scipy
 from scipy import misc
 import time
 
-from BVAR_NIG_DPD import BVARNIGDPD
-from BVAR_NIG import BVARNIG
+from .BVAR_NIG_DPD import BVARNIGDPD
+from .BVAR_NIG import BVARNIG
 
 class Detector:
     """key object in the Spatial BOCD
@@ -312,10 +312,10 @@ class Detector:
         time_start = time.clock()
         time2 = 0.0
         for t in range(start-1, stop-1):
-            if t % self.notifications == 0 and time2 != 0.0:
-                print("Processing observation #" + str(int(t)))
-                print("Last iteration took " + str(time.clock() - time2) + 
-                      " seconds")
+            #if t % self.notifications == 0 and time2 != 0.0:
+            #    print("Processing observation #" + str(int(t)))
+            #    print("Last iteration took " + str(time.clock() - time2) + 
+            #          " seconds")
             time2 = time.clock()
             self.next_run(self.data[t,:], t+1)          
         self.execution_time = time.clock() - time_start
